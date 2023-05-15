@@ -72,13 +72,29 @@ finish the following steps:
 ```
 $ petalinux-package --boot --force --format BIN --fsbl --u-boot --kernel --offset 0xA30000 --boot-script --offset 0x1770000 --file-attribute partition_owner=uboot
 ```
+## **Program Flash**
+We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the Flash Programming Tool.If you want to learn more,please read the reference[5].  
+1. Power on the ZC702 board in JTAG boot mode (SW16 = 00000).  
+![JTAG mood](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2020.2/build/html/_images/image671.jpeg)
+2. Select **Xilinx** → **Program Flash** in the Vitis IDE.
 
+3. Set the Image File to the **BOOT.bin** file and the Init File to **<your board>fsbl.elf**.
 
+4. Set the Flash Type to **qspi-x4-single**.
 
+5. Enable **Blank Check after Erase** and **Verify after flash**.
 
+6. Select **Program**.
 
-
-
+## **Result log**
+  
+## **REFERENCE**
+[1]PetaLinux Tools Documentation: Reference Guide (UG1144) （https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Steps-to-Boot-a-PetaLinux-Image-on-Hardware-with-QSPI-or-OSPI）  
+[2]Zynq MPSoC - How to prepare a QSPI boot image to use with the default boot.scr method with PetaLinux(https://support.xilinx.com/s/article/1276990?language=en_US)  
+[3]2020.x-2021.x and later PetaLinux: How to boot QSPI images on a ZCU102 board using U-Boot distro boot(https://support.xilinx.com/s/article/000033588?language=en_US)   
+[4]下载开发板bsp文件（https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1884029195/2021.1+Release）  
+[5]Program Flash in Example 10(https://xilinx.github.io/Embedded-Design-Tutorials/docs/2020.2/build/html/docs/Introduction/Zynq7000-EDT/7-linux-booting-debug.html)
+ 
 
 
 
