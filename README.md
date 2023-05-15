@@ -48,7 +48,7 @@ So we allocate **10MB** to BOOT.bin
 |0x17C0000~ 0x2000000  |             8.25MB(0x840000)    |Rootfs|  
 
 **Attention**： Image is conresponding to kernel in the following image.  
-
+![configure the project](images/706_1.png)
 
 
 
