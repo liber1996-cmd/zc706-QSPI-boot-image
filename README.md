@@ -34,9 +34,9 @@ The flash memory of the whole zc706 development board is 32MB
 So we allocate **10MB** to BOOT.bin  
 
 - **bootenv** :no file correspondence but still need the size of **0.2MB**   
-
+- **Boot.scr** ：boot.scr                                        **0.3MB**
 - **Image** includes：image.ub                                           **13.25MB**  
-- **Rootfs** includes: rootfs.cpio.gz.u-boot                                  **8.25MB**  
+
 
 
 |Flash Partition Name|Partion Address|Partition Size|  
@@ -45,20 +45,20 @@ So we allocate **10MB** to BOOT.bin
 |0xA00000~0xA30000 |                小于0.2MB(0x30000)     |     bootenv|  
 |0xA30000~0x1770000  |              13.25MB(0xD40000)  |Image（kernel）|  
 |0x1770000~0x 17C0000 |                 大于0.3MB(0x50000)      | bootscr|  
-|0x17C0000~ 0x2000000  |             8.25MB(0x840000)    |Rootfs|  
+
 
 finish the following steps:  
 `$ petalinux-config ---> Subsystem AUTO Hardware Settings---> Flash Settings`
 
-**Attention**： Image is conresponding to kernel in the following image.  
+**Attention**： Image is conresponding to kernel in the following image. The rootfs is useless in our project.
 ![configure the project](images/706_1.svg)
 
 ### 3. Configure u-boot according to your own file.   
 ```$ petalinux-config ---> u-boot Configuration ---> u-boot script configuration ---> QSPI/OSPI image offsets```
 
 - **Kernel** corresponds to **image**  
-- **Ramdisk** corresponds to **rootfs** 
 - **Fit image** according to the kernel to match the same as the **kernel** 
+- **Attention**：The Ramdisk is respond to the rootfs ,and the rootfs is useless in our project.We don't need to config it.
 
 ![configure the project](images/706_2.svg)
 
@@ -70,7 +70,7 @@ finish the following steps:
 `$ petalinux-build`  
 
 ```
-$ petalinux-package --boot --force --format BIN --fsbl --u-boot --kernel --offset 0xA30000 --boot-script --offset 0x1770000 --add images/linux/rootfs.cpio.gz.u-boot --offset 0x17C0000 --file-attribute partition_owner=uboot
+$ petalinux-package --boot --force --format BIN --fsbl --u-boot --kernel --offset 0xA30000 --boot-script --offset 0x1770000 --file-attribute partition_owner=uboot
 ```
 
 
