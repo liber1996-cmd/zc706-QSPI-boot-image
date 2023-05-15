@@ -88,10 +88,18 @@ We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the 
 ![ProgramFlash](images/programFlash.PNG)
   
   
-## **Result log**
-- 烧录成功标志
+### **Program Flash Successful Result**  
+![flashSuccessfl](images/FlashSuccessful.PNG)
   
-- 串口日志
+## **The serial port verifies whether the image is successful**
+  - switch off your board.
+  - After you program the QSPI Flash, set the SW16 switch on your board as shown in the following figure.  
+  ![QSPI mood](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2020.2/build/html/_images/image88.jpeg)
+  - Link the serial cable and set the serial baud rate to 115200.
+  - switch on you board.
+  
+  
+### The development board successfully finds the image through QSPI
 ```
 [Friday 6:05 PM] Li, BoHan
 
