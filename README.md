@@ -80,7 +80,7 @@ We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the 
 
 3. Set the Image File to the **BOOT.bin** file and the Init File to **<your board>fsbl.elf**.
 
-4. Set the Flash Type to **qspi-x4-single**.
+4. Set the Flash Type to **qspi-x8-dual_parallel**.
 
 5. Enable **Blank Check after Erase** and **Verify after flash**.
 
@@ -95,16 +95,12 @@ We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the 
   - switch off your board.
   - After you program the QSPI Flash, set the SW16 switch on your board as shown in the following figure.  
   ![QSPI mood](https://xilinx.github.io/Embedded-Design-Tutorials/docs/2020.2/build/html/_images/image88.jpeg)
-  - Link the serial cable and set the serial baud rate to 115200.
+  - Link the Uart serial cable and set the serial baud rate to 115200.
   - switch on you board.
   
   
 ### The development board successfully finds the image through QSPI
 ```
-[Friday 6:05 PM] Li, BoHan
-
-
-
 
  
 
