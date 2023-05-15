@@ -58,7 +58,7 @@ finish the following steps:
 
 - **Kernel** corresponds to **image**  
 - **Fit image** according to the kernel to match the same as the **kernel** 
-- **Attention**：The Ramdisk is respond to the rootfs ,and the rootfs is useless in our project.We don't need to config it.
+- **Attention**：The Ramdisk is respond to the rootfs ,and the rootfs is useless in our project.We don't need to configure it.
 
 ![configure the project](images/706_2.svg)
 
@@ -99,7 +99,7 @@ We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the 
   - switch on you board.
   
   
-### The development board successfully finds the image through QSPI
+### RESULT:The development board successfully finds the image through QSPI
 ```
 
  
