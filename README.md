@@ -63,3 +63,6 @@ So we allocate **10MB** to BOOT.bin
 
 
 
+
+
+
