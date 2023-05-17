@@ -14,6 +14,7 @@ $ cd xilinx-zc706-2022.2
 ```
 ### 2. Configure the project with a QSPI partition.
 
+#### (1)
 If you cannot know the memory allocation in advance, you need to run the following command first, and allocate the flash space yourself according to the size of the project file of the build.
 
 `$ petalinux-build`
@@ -45,12 +46,13 @@ So we allocate **10MB** to BOOT.bin
 |0xA30000~0xA80000  |               大于0.3MB(0x50000)  |bootscr|  
 |0xA80000~0x2000000 |                21MB左右(0x1580000)      | image(kernel)| 
   
-**Attention**：Kernel is behind bootscr.It depends on the package order.  
+**Attention：Kernel is behind bootscr.It depends on the package order.  The package order is as followings.**
 ![configure the project](images/202202/PackageOrder.PNG)
+#### (2)
 finish the following steps:  
 `$ petalinux-config ---> Subsystem AUTO Hardware Settings---> Flash Settings`
 
-**Attention**： Image is conresponding to kernel in the following image. The rootfs is useless in our project.
+**Attention： Image is conresponding to kernel in the following image. The rootfs is useless in our project.**
 ![configure the project](images/706_1.svg)
 
 ### 3. Configure u-boot according to your own file.   
@@ -63,17 +65,16 @@ finish the following steps:
 ![configure the project](images/706_2.svg)
 
 ### 4.Configure the arm using the following steps  
+#### (1)  
 ```
 $ petalinux-config -c u-boot ---> ARM architecture ---> (0xA30000) Boot script offset
-
-
-
 ```
 **If the modification cannot be saved, you need to manually modify the configuration file，as following**
 project-spec/meta-user/recipes-bsp/u-boot/files/bsp.cfg  
 ![configure the project](images/202202/bspcfg1.svg)
 ![configure the project](images/202202/bspcfg2.svg)
 ![configure the project](images/202202/ubootDootscr.PNG)
+#### (2)  
 ```
 $ petalinux-config -c u-boot ---> Environment ---> [ ] Environment is not stored
 $ petalinux-config -c u-boot ---> Environment ---> [*] Environment is in SPI flash
