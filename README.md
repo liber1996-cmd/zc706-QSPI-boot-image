@@ -70,7 +70,7 @@ finish the following steps:
 `$ petalinux-build`  
 
 ```
-$ petalinux-package --boot --force --format BIN --fsbl --u-boot --kernel --offset 0xA30000 --boot-script --offset 0x1770000 --file-attribute partition_owner=uboot
+$ petalinux-package --boot --force --format BIN --fsbl --u-boot --fpga --kernel --offset 0xA30000 --boot-script --offset 0x1770000 --file-attribute partition_owner=uboot
 ```
 ## **Program Flash**
 We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the Flash Programming Tool.If you want to learn more,please read the reference[5].  
