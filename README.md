@@ -42,9 +42,9 @@ So we allocate **10MB** to BOOT.bin
 |Flash Partition Name|Partion Address|Partition Size|  
 |:---:|:---:|:---:|   
 |0~0xA00000  |                                 10MB          |                 boot|  
-|0xA00000~0xA30000 |                小于0.2MB(0x30000)     |     bootenv|  
+|0xA00000~0xA30000 |               less than 0.2MB(0x30000)     |     bootenv|  
 |0xA30000~0x1770000  |              13.25MB(0xD40000)  |Image（kernel）|  
-|0x1770000~0x 17C0000 |                 大于0.3MB(0x50000)      | bootscr|  
+|0x1770000~0x 17C0000 |                 greater than 0.3MB(0x50000)      | bootscr|  
 
 
 finish the following steps:  
