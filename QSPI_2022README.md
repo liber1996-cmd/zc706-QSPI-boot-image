@@ -43,9 +43,10 @@ So we allocate **10MB** to BOOT.bin
 |0~0xA00000  |                                 10MB          |                 boot|  
 |0xA00000~0xA30000 |                小于0.2MB(0x30000)     |     bootenv|  
 |0xA30000~0xA80000  |               大于0.3MB(0x50000)  |bootscr|  
-|0xA80000~0x2000000 |                21MB左右(0x1580000)      | image(kernel)|  
-**Attention**：Kernel is behind bootscr.It depends on the package order.
-
+|0xA80000~0x2000000 |                21MB左右(0x1580000)      | image(kernel)| 
+  
+**Attention**：Kernel is behind bootscr.It depends on the package order.  
+![configure the project](images/202202/PackageOrder.PNG)
 finish the following steps:  
 `$ petalinux-config ---> Subsystem AUTO Hardware Settings---> Flash Settings`
 
@@ -87,7 +88,7 @@ $ petalinux-config -c u-boot ---> Environment ---> [*] Environment is in SPI fla
 `$ petalinux-build`  
 
 ```
-$ petalinux-package --boot --force --format BIN --fsbl --u-boot --kernel --offset 0xA30000 --boot-script --offset 0x1770000 --file-attribute partition_owner=uboot
+$ petalinux-package --boot --force --format BIN --fsbl --u-boot --fpga --kernel --offset 0xA80000 --boot-script --offset 0xA30000 --file-attribute partition_owner=uboot
 ```
 ## **Program Flash**
 We use the software"Xilinx Vitis 2022.2".And we programming QSPI Flash with the Flash Programming Tool.If you want to learn more,please read the reference[5].  
