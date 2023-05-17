@@ -62,12 +62,17 @@ finish the following steps:
 ![configure the project](images/706_2.svg)
 
 ### 4.Configure the arm using the following steps  
-`$ petalinux-config -c u-boot ---> ARM architecture ---> (0xA30000) Boot script offset`
+```
+$ petalinux-config -c u-boot ---> ARM architecture ---> (0xA30000) Boot script offset
+$ petalinux-config -c u-boot ---> Environment ---> [ ] Environment is not stored
+$ petalinux-config -c u-boot ---> Environment ---> [*] Environment is in SPI flash
+
+```
 **If the modification cannot be saved, you need to manually modify the configuration file，as following**
-project-spec/meta-user/recipes-bsp/u-boot/files/bsp.cfg
-![configure the project](images/706_2.svg)
-![configure the project](images/706_2.svg)
-![configure the project](images/706_2.svg)
+project-spec/meta-user/recipes-bsp/u-boot/files/bsp.cfg  
+![configure the project](images/202202/bspcfg1.svg)
+![configure the project](images/202202/bspcfg2.svg)
+![configure the project](images/202202/ubootDootscr.PNG)
 
 ### 5.Pack the files to boot.BIN  
 
