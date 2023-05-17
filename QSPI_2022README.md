@@ -53,7 +53,7 @@ finish the following steps:
 `$ petalinux-config ---> Subsystem AUTO Hardware Settings---> Flash Settings`
 
 **Attention： Image is conresponding to kernel in the following image. The rootfs is useless in our project.**
-![configure the project](images/706_1.svg)
+![configure the project](images/202202/FlashAllocate.PNG)
 
 ### 3. Configure u-boot according to your own file.   
 ```$ petalinux-config ---> u-boot Configuration ---> u-boot script configuration ---> QSPI/OSPI image offsets```
