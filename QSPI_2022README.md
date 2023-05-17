@@ -62,7 +62,7 @@ finish the following steps:
 - **Fit image** according to the kernel to match the same as the **kernel** 
 - **Attention**：The Ramdisk is respond to the rootfs ,and the rootfs is useless in our project.We don't need to configure it.
 
-![configure the project](images/706_2.svg)
+![configure the project](images/202202/UbootConfig.PNG)
 
 ### 4.Configure the arm using the following steps  
 #### (1)  
