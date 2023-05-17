@@ -50,9 +50,9 @@ So we allocate **10MB** to BOOT.bin
 |Flash Partition Name|Partion Address|Partition Size|  
 |:---:|:---:|:---:|   
 |0~0xA00000  |                                 10MB          |                 boot|  
-|0xA00000~0xA30000 |                小于0.2MB(0x30000)     |     bootenv|  
-|0xA30000~0xA80000  |               大于0.3MB(0x50000)  |bootscr|  
-|0xA80000~0x2000000 |                21MB左右(0x1580000)      | image(kernel)| 
+|0xA00000~0xA30000 |                less than 0.2MB(0x30000)     |     bootenv|  
+|0xA30000~0xA80000  |               greater than0.3MB(0x50000)  |bootscr|  
+|0xA80000~0x2000000 |                nearly 21MB(0x1580000)      | image(kernel)| 
   
 **Attention：Kernel is behind bootscr.It depends on the package order.  The package order is as followings.**
 ![configure the project](images/202202/PackageOrder.PNG)
