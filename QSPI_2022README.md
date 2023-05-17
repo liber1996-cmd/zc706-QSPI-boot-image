@@ -44,7 +44,7 @@ So we allocate **10MB** to BOOT.bin
 |0xA00000~0xA30000 |                小于0.2MB(0x30000)     |     bootenv|  
 |0xA30000~0xA80000  |               大于0.3MB(0x50000)  |bootscr|  
 |0xA80000~0x2000000 |                21MB左右(0x1580000)      | image(kernel)|  
-
+**Attention**：Kernel is behind bootscr.It depends on the package order.
 
 finish the following steps:  
 `$ petalinux-config ---> Subsystem AUTO Hardware Settings---> Flash Settings`
@@ -64,8 +64,8 @@ finish the following steps:
 ### 4.Configure the arm using the following steps  
 ```
 $ petalinux-config -c u-boot ---> ARM architecture ---> (0xA30000) Boot script offset
-$ petalinux-config -c u-boot ---> Environment ---> [ ] Environment is not stored
-$ petalinux-config -c u-boot ---> Environment ---> [*] Environment is in SPI flash
+
+
 
 ```
 **If the modification cannot be saved, you need to manually modify the configuration file，as following**
@@ -73,6 +73,14 @@ project-spec/meta-user/recipes-bsp/u-boot/files/bsp.cfg
 ![configure the project](images/202202/bspcfg1.svg)
 ![configure the project](images/202202/bspcfg2.svg)
 ![configure the project](images/202202/ubootDootscr.PNG)
+```
+$ petalinux-config -c u-boot ---> Environment ---> [ ] Environment is not stored
+$ petalinux-config -c u-boot ---> Environment ---> [*] Environment is in SPI flash
+```
+![configure the project](images/202202/UbootEnviroment.PNG)
+
+
+
 
 ### 5.Pack the files to boot.BIN  
 
